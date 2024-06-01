@@ -17,3 +17,24 @@ var isPalindrome = function (x) {
 
   return true;
 };
+
+
+describe('9. Palindrome Numbers', () => {
+
+  it('121 is a palindrome', () => {
+    expect(isPalindrome(121)).toStrictEqual(true);
+  });
+
+  it('1221 is a palindrome', () => {
+    expect(isPalindrome(2332)).toStrictEqual(true);
+  });
+
+  it('-121 is not a palindrome', () => {
+    expect(isPalindrome(-121)).toStrictEqual(false);
+  });
+
+  it('1220 is not a palindrome', () => {
+    expect(isPalindrome(2332)).toStrictEqual(true);
+  });
+
+});

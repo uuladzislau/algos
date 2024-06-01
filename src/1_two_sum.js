@@ -18,3 +18,11 @@ var twoSum = function (nums, target) {
 
   throw new Error('Solution not found :(');
 };
+
+describe('1. Two Sum', () => {
+
+  it('Test case #1', () => {
+    expect(twoSum([3, 3], 6)).toStrictEqual([0, 1]);
+  });
+
+});
