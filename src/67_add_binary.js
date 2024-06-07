@@ -14,36 +14,13 @@ var addBinary = function (a, b) {
   let carry = 0;
 
   for (let i = a.length - 1; i >= 0; i--) {
-    const key = a[i] + b[i];
-
-    if (carry > 0) {
-      if (key === '00') {
-        answer = '1' + answer;
-        carry--;
-      }
-      else if (key === '01' || key === '10') {
-        answer = '0' + answer;
-      }
-      else {
-        answer = '1' + answer;
-      }
-    }
-    else {
-      if (key === '00') {
-        answer = '0' + answer;
-      }
-      else if (key === '01' || key === '10') {
-        answer = '1' + answer;
-      }
-      else {
-        answer = '0' + answer;
-        carry++;
-      }
-    }
+    const sum = parseInt(a[i]) + parseInt(b[i]) + carry;
+    answer = (sum % 2) + answer;
+    carry = (sum >= 2) ? 1 : 0;
   }
 
-  if (carry > 0) {
-    return '1'.repeat(carry) + answer;
+  if (carry) {
+    answer = '1' + answer;
   }
 
   return answer;
