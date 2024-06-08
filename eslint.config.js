@@ -2,7 +2,9 @@ module.exports = [
   {
     rules: {
       'semi': 'error',
-      'prefer-const': 'error'
+      'prefer-const': 'error',
+      'quotes': ['error', 'single'],
+      'indent': [1, 2]
     },
   }
 ];
