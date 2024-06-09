@@ -1,8 +1,8 @@
 /**
  * Definition for singly-linked list.
- * 
- * @param {number} val 
- * @param {ListNode} next 
+ *
+ * @param {number} val
+ * @param {ListNode} next
  */
 function ListNode(val, next) {
   /** @type {number} */

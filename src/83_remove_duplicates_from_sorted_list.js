@@ -1,8 +1,8 @@
 /**
  * Definition for singly-linked list.
- * 
- * @param {number} val 
- * @param {ListNode} next 
+ *
+ * @param {number} val
+ * @param {ListNode} next
  */
 function ListNode(val, next) {
   /** @type {number} */
@@ -29,7 +29,7 @@ var deleteDuplicates = function(head) {
     head = head.next;
     return deleteDuplicates(head);
   }
-  
+
   head.next = deleteDuplicates(head.next);
   return head;
 };

@@ -7,7 +7,7 @@ var searchInsert = function (nums, target) {
   let left = 0;
 
   let right = nums.length - 1;
-  
+
   // finding target with binary search
 
   while (left <= right) {
@@ -47,4 +47,4 @@ describe('35. Search Insert Position', () => {
     expect(searchInsert([1, 3, 4, 5, 6, 7, 8], 4)).toStrictEqual(2);
   });
 
-}); 
+});

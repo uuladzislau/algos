@@ -51,4 +51,4 @@ describe('58. Legnth of Last Word', () => {
     expect(lengthOfLastWord('a')).toStrictEqual(1);
   });
 
-}); 
+});
