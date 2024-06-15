@@ -3,18 +3,18 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-  const solutions = {
-    1: 1,
-    2: 2
-  };
+  const solutions = [1, 2];
+
+  if (n <= 2) return solutions[n - 1];
 
   for (let i = 3; i <= n; i++) {
-    const solution = solutions[i - 1] + solutions[i - 2];
-    solutions[i] = solution;
-    console.log(`Solution for ${i}=${solutions[i]}`);
+    const newLocalSolution = solutions[1] + solutions[0];
+
+    solutions[0] = solutions[1];
+    solutions[1] = newLocalSolution;
   }
 
-  return solutions[n];
+  return solutions[1];
 };
 
 describe('70. Climbing Stairs', () => {
