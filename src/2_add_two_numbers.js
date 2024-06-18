@@ -14,31 +14,24 @@ function ListNode(val, next) {
  * @return {ListNode}
  */
 var addTwoNumbers = function(l1, l2) {
+  const dummy = new ListNode();
 
-  const sum = (l1, l2, carry) => {
-    if (l1 === null && l2 === null) {
-      return (carry === 0) ? null : new ListNode(carry);
-    };
+  let carry = 0;
+  let node = dummy;
 
-    const val1 = (l1 === null) ? new ListNode() : l1;
-    const val2 = (l2 === null) ? new ListNode() : l2;
+  while (l1 || l2 || carry) {
+    const sum = (l1?.val || 0) + (l2?.val || 0) + carry;
 
-    let res = val1.val + val2.val;
+    carry = Math.floor(sum / 10);
 
-    if (carry > 0) {
-      res++;
-      carry--;
-    }
+    node.next = new ListNode(sum % 10);
+    node = node.next;
 
-    if (res > 9) {
-      res -= 10;
-      carry++;
-    }
+    l1 = l1?.next;
+    l2 = l2?.next;
+  }
 
-    return new ListNode(res, sum(val1.next, val2.next, carry));
-  };
-
-  return sum(l1, l2, 0);
+  return dummy.next;
 };
 
 describe('2. Add Two Numbers', () => {
